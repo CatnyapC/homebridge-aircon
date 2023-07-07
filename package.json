@@ -1,7 +1,7 @@
 {
   "displayName": "Aircon Control for Homebridge + Nature Remo",
   "name": "homebridge-nature-aircon-nano-fix",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Aircon Control for Homebridge + Nature Remo",
   "license": "Apache-2.0",
   "repository": {
