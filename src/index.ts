@@ -429,11 +429,17 @@ class NatureAircon {
     }
 
     this.natureClient.getSensorValue().then(sensor => {
-      this.sensor = sensor;
+      var temperature = 0;
+      try{
+        this.sensor = sensor;
+        temperature = this.Characteristic.CurrentTemperature,
+        sensor.temperature;
+      }catch{
+      }
       this.service.updateCharacteristic(
-        this.Characteristic.CurrentTemperature,
-        sensor.temperature
+        temperature
       );
+      
     });
 
     this.natureClient
