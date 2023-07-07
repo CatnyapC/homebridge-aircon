@@ -439,7 +439,7 @@ class NatureAircon {
           }
         }
       });
-    }catch{//No Empty Rule}
+    }catch{/*No Empty Rule*/}
 
     this.natureClient
       .listAircon()
