@@ -431,10 +431,10 @@ class NatureAircon {
     this.natureClient.getSensorValue().then(sensor => {
       this.sensor = sensor;
       if ('temperature' in sensor) {
-      this.service.updateCharacteristic(
-        this.Characteristic.CurrentTemperature,
-        sensor.temperature
-      );
+        this.service.updateCharacteristic(
+          this.Characteristic.CurrentTemperature,
+          sensor.temperature
+        );
       }
     });
 
