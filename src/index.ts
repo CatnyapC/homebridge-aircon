@@ -427,19 +427,7 @@ class NatureAircon {
     if (!this.natureClient) {
       return;
     }
-    try{
-      this.natureClient.getSensorValue().then(sensor => {
-        if (sensor) {
-          this.sensor = sensor;
-          if ('temperature' in sensor) {
-            this.service.updateCharacteristic(
-              this.Characteristic.CurrentTemperature,
-              sensor.temperature
-            );
-          }
-        }
-      });
-    }catch{/*No Empty Rule*/}
+
 
     this.natureClient
       .listAircon()
