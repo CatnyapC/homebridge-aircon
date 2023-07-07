@@ -429,12 +429,20 @@ class NatureAircon {
     }
 
     this.natureClient.getSensorValue().then(sensor => {
-      this.sensor = sensor;
-      if ('temperature' in sensor) {
-        this.service.updateCharacteristic(
-          this.Characteristic.CurrentTemperature,
-          sensor.temperature
-        );
+      if (sensor) {
+        this.sensor = sensor;
+    
+        // Only update the characteristic if a temperature value is present
+        if ('temperature' in sensor) {
+          this.service.updateCharacteristic(
+            this.Characteristic.CurrentTemperature,
+            sensor.temperature
+          );
+        } else {
+          //console.log("This sensor does not support temperature readings.");
+        }
+      } else {
+        //console.log("No sensor value was returned.");
       }
     });
 
