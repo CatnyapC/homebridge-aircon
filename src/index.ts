@@ -436,10 +436,10 @@ class NatureAircon {
               this.Characteristic.CurrentTemperature,
               sensor.temperature
             );
-            }
           }
+        }
       });
-    }catch{}
+    }catch{//No Empty Rule}
 
     this.natureClient
       .listAircon()
