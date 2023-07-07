@@ -428,18 +428,18 @@ class NatureAircon {
       return;
     }
     try{
-    this.natureClient.getSensorValue().then(sensor => {
-      if (sensor) {
-        this.sensor = sensor;
-    
-        // Only update the characteristic if a temperature value is present
-        if ('temperature' in sensor) {
-          this.service.updateCharacteristic(
-            this.Characteristic.CurrentTemperature,
-            sensor.temperature
-          );
-
-    });}catch{}
+      this.natureClient.getSensorValue().then(sensor => {
+        if (sensor) {
+          this.sensor = sensor;
+          if ('temperature' in sensor) {
+            this.service.updateCharacteristic(
+              this.Characteristic.CurrentTemperature,
+              sensor.temperature
+            );
+            }
+          }
+      });
+      }catch{}
 
     this.natureClient
       .listAircon()
