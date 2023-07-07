@@ -427,7 +427,7 @@ class NatureAircon {
     if (!this.natureClient) {
       return;
     }
-
+    try{
     this.natureClient.getSensorValue().then(sensor => {
       if (sensor) {
         this.sensor = sensor;
@@ -438,13 +438,8 @@ class NatureAircon {
             this.Characteristic.CurrentTemperature,
             sensor.temperature
           );
-        } else {
-          //console.log("This sensor does not support temperature readings.");
-        }
-      } else {
-        //console.log("No sensor value was returned.");
-      }
-    });
+
+    });}catch{}
 
     this.natureClient
       .listAircon()
