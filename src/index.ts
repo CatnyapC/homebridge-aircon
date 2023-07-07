@@ -439,7 +439,7 @@ class NatureAircon {
             }
           }
       });
-      }catch{}
+    }catch{}
 
     this.natureClient
       .listAircon()
