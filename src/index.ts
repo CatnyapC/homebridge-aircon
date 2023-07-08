@@ -428,6 +428,15 @@ class NatureAircon {
       return;
     }
 
+    if (!this.natureClient.getDevices.name.includes("Nano")){
+      this.natureClient.getSensorValue().then(sensor => {
+        this.sensor = sensor;
+        this.service.updateCharacteristic(
+          this.Characteristic.CurrentTemperature,
+          sensor.temperature
+        );
+      });
+    }
 
     this.natureClient
       .listAircon()
